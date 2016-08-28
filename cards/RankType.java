@@ -1,6 +1,6 @@
 package cards;
 
-public enum ValueType {
+public enum RankType {
 
   ACE(1),
   TWO(2),
@@ -18,7 +18,7 @@ public enum ValueType {
 
   int value;
 
-  ValueType(int value) {
+  RankType(int value) {
     this.value = value;
   }
 

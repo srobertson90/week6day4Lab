@@ -21,10 +21,10 @@ public class GameTest {
     player1 = new Player("Gillian");
     player2 = new Player("Stuart");
     player3 = new Player("Emma");
-    card1 = new Card(SuitType.DIAMONDS, ValueType.THREE);
-    card2 = new Card(SuitType.HEARTS, ValueType.KING);
-    card3 = new Card(SuitType.CLUBS, ValueType.QUEEN);
-    card4 = new Card(SuitType.SPADES, ValueType.SEVEN);
+    card1 = new Card(SuitType.DIAMONDS, RankType.THREE);
+    card2 = new Card(SuitType.HEARTS, RankType.KING);
+    card3 = new Card(SuitType.CLUBS, RankType.QUEEN);
+    card4 = new Card(SuitType.SPADES, RankType.SEVEN);
     game = new Game();
   }
 

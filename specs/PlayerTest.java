@@ -11,7 +11,7 @@ public class PlayerTest {
   @Before
   public void before(){
     player = new Player("Player 1");
-    card = new Card(SuitType.DIAMONDS, ValueType.THREE);
+    card = new Card(SuitType.DIAMONDS, RankType.THREE);
   }
 
   @Test

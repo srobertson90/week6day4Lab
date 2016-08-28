@@ -3,19 +3,23 @@ package cards;
 public class Card {
 
   SuitType suit;
-  ValueType value;
+  RankType rank;
 
-  public Card(SuitType suit, ValueType value){
+  public Card(SuitType suit, RankType rank){
     this.suit = suit;
-    this.value = value;
+    this.rank = rank;
   }
 
   public SuitType getSuit(){
     return this.suit;
   }
 
-  public ValueType getValue(){
-    return this.value;
+  public RankType getRank(){
+    return this.rank;
+  }
+
+  public int getValue() {
+    return rank.getValue();
   }
 
 }
