@@ -1,7 +1,7 @@
 import static org.junit.Assert.*;
 import org.junit.*;
 import player.*;
-import deck.*;
+import cards.*;
 
 public class PlayerTest {
 

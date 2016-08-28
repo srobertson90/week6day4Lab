@@ -1,4 +1,4 @@
-package deck;
+package cards;
 
 public enum SuitType {
 

@@ -1,5 +1,5 @@
 package game;
-import deck.*;
+import cards.*;
 import java.util.*;
 import player.*;
 
@@ -48,7 +48,5 @@ public void moveCardBetweenPlayers(Player player1, Player player2, Card card){
   player1.handRemove(card);
   player2.handAdd(card);
 }
-
-
 
 }

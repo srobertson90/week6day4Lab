@@ -1,5 +1,5 @@
 package player;
-import deck.*;
+import cards.*;
 import java.util.*;
 
 public class Player {
