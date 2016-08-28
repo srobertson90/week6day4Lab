@@ -62,10 +62,26 @@ public class PlayerTest {
   }
 
   @Test
+  public void canRemoveCardfromHandBAtZero(){
+    player.handAdd(card);
+    player.handRemoveAtZero();
+    assertEquals(0, player.handCount());
+  }
+
+  @Test
   public void canReturnCardOnRemove(){
     player.handAdd(card);
     Card returnedCard = player.handRemove(card);
     assertEquals(SuitType.DIAMONDS, returnedCard.getSuit());
   }
+
+  @Test
+  public void canReturnCardOnRemove2(){
+    player.handAdd(card);
+    Card returnedCard = player.firstCard();
+    assertEquals(SuitType.DIAMONDS, returnedCard.getSuit());
+  }
+
+
 
 }

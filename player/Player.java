@@ -43,4 +43,13 @@ public class Player {
     return null;
   }
 
+  public Card handRemoveAtZero() {
+    Card card = hand.remove(0);
+    return null;
+  }
+
+  public Card firstCard() {
+    return hand.get(0);
+  }
+
 }

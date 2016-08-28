@@ -42,7 +42,6 @@ public class GameTest {
   @Test
   public void canClearDeck(){
     game.addToDeck(card1);
-    assertEquals(1, game.deckSize());
     game.clearDeck();
     assertEquals(0, game.deckSize());
   }
@@ -50,7 +49,6 @@ public class GameTest {
   @Test 
   public void canRemoveCardPile() {
     game.addToDeck(card1);
-    assertEquals(1, game.deckSize());
     game.removeFromDeck(card1);
     assertEquals(0, game.deckSize());
   }
@@ -58,7 +56,6 @@ public class GameTest {
   @Test
   public void returnsCardOnRemoval() {
     game.addToDeck(card1);
-    assertEquals(1, game.deckSize());
     Card card = game.removeFromDeck(card1);
     assertEquals(SuitType.DIAMONDS, card.getSuit());
   }
@@ -85,6 +82,13 @@ public class GameTest {
     game.moveCardBetweenPlayers(player1, player2, card1);
     assertEquals(0, player1.handCount());
     assertEquals(1, player2.handCount());
+  }
+
+  @Test
+  public void deckCanPopulate(){
+    game.clearDeck();
+    game.fullDeck();
+    assertEquals(52, game.deckSize());
   }
 
 }
