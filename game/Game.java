@@ -23,6 +23,14 @@ public void addToDeck(Card card){
  deck.add(card);
 }
 
+public void fullDeck(){
+    for(SuitType suit : SuitType.values()){
+      for(RankType rank : RankType.values()){
+        deck.add(new Card(suit, rank));
+      }
+    }
+  }
+
 public void clearDeck(){
   deck.clear();
 }
