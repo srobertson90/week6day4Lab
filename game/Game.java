@@ -7,41 +7,41 @@ public class Game {
 
 
  ArrayList<Player> players;
- ArrayList<Card> cardPile;
+ ArrayList<Card> deck;
 
 
 public Game(){
   this.players = new ArrayList<Player>();
-  this.cardPile = new ArrayList<Card>();
+  this.deck = new ArrayList<Card>();
 }
 
-public int cardPileSize(){
-   return cardPile.size();
+public int deckSize(){
+   return deck.size();
 }
 
-public void addToCardPile(Card card){
- cardPile.add(card);
+public void addToDeck(Card card){
+ deck.add(card);
 }
 
-public void clearCardPile(){
-  cardPile.clear();
+public void clearDeck(){
+  deck.clear();
 }
 
-public Card removeFromCardPile(Card card){
-  if (cardPile.remove(card)) {
+public Card removeFromDeck(Card card){
+  if (deck.remove(card)) {
      return card;
   }
   return null;
 }
 
 public void dealCard(Player player, Card card){
-  removeFromCardPile(card);
+  removeFromDeck(card);
   player.handAdd(card);
 }
 
 public void returnToDeck(Player player, Card card){
   player.handRemove(card);
-  addToCardPile(card);
+  addToDeck(card);
 }
 
 public void moveCardBetweenPlayers(Player player1, Player player2, Card card){

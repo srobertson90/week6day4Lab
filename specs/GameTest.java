@@ -29,47 +29,47 @@ public void before(){
 }
 
 @Test
-public void checkPileStartsEmpty(){
-  assertEquals(0, game.cardPileSize());
+public void deckStartsEmpty(){
+  assertEquals(0, game.deckSize());
 }
 
 @Test
-public void canAddCardToCardPile(){
- game.addToCardPile(card1);
- assertEquals(1, game.cardPileSize());
+public void canAddCardToDeck(){
+ game.addToDeck(card1);
+ assertEquals(1, game.deckSize());
 
 }
 
 @Test
-public void canClearCardPile(){
-  game.addToCardPile(card1);
-  assertEquals(1, game.cardPileSize());
-  game.clearCardPile();
-  assertEquals(0, game.cardPileSize());
+public void canClearDeck(){
+  game.addToDeck(card1);
+  assertEquals(1, game.deckSize());
+  game.clearDeck();
+  assertEquals(0, game.deckSize());
 }
 
 @Test 
 public void canRemoveCardPile() {
-  game.addToCardPile(card1);
-  assertEquals(1, game.cardPileSize());
-  game.removeFromCardPile(card1);
-  assertEquals(0, game.cardPileSize());
+  game.addToDeck(card1);
+  assertEquals(1, game.deckSize());
+  game.removeFromDeck(card1);
+  assertEquals(0, game.deckSize());
 }
 
 @Test
 public void returnsCardOnRemoval() {
-  game.addToCardPile(card1);
-  assertEquals(1, game.cardPileSize());
-  Card card = game.removeFromCardPile(card1);
+  game.addToDeck(card1);
+  assertEquals(1, game.deckSize());
+  Card card = game.removeFromDeck(card1);
   assertEquals(SuitType.DIAMONDS, card.getSuit());
 }
 
 @Test
 public void canDealCardToPlayer() {
-  game.addToCardPile(card1);
+  game.addToDeck(card1);
   game.dealCard(player1, card1);
   assertEquals(1, player1.handCount());
-  assertEquals(0, game.cardPileSize());
+  assertEquals(0, game.deckSize());
 }
 
 @Test
@@ -77,7 +77,7 @@ public void canTakeCardFromPlayer(){
   player1.handAdd(card1);
   game.returnToDeck(player1, card1);
   assertEquals(0, player1.handCount());
-  assertEquals(1, game.cardPileSize());
+  assertEquals(1, game.deckSize());
 }
 
 @Test
