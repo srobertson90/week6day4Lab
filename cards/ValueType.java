@@ -26,5 +26,4 @@ public enum ValueType {
     return value;
   }
 
-
 }
