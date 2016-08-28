@@ -7,11 +7,13 @@ public class PlayerTest {
 
   Player player;
   Card card;
+  Card card2;
 
   @Before
   public void before(){
     player = new Player("Player 1");
     card = new Card(SuitType.DIAMONDS, RankType.THREE);
+    card2 = new Card(SuitType.SPADES, RankType.FOUR);
   }
 
   @Test
@@ -28,6 +30,19 @@ public class PlayerTest {
   public void canAddCardtoHand() {
     player.handAdd(card);
     assertEquals(1, player.handCount());
+  }
+
+  @Test
+  public void canGetHandValueWithOneCard(){
+    player.handAdd(card);
+    assertEquals(3, player.handValue());
+  }
+
+  @Test
+  public void canGetHandValueWithTwoCards(){
+    player.handAdd(card);
+    player.handAdd(card2);
+    assertEquals(7, player.handValue());
   }
 
   @Test

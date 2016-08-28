@@ -28,6 +28,14 @@ public class Player {
     hand.clear();
   }
 
+  public int handValue() {
+    int total = 0;
+    for (Card card : hand){
+      total += card.getValue();
+    }
+    return total;
+  }
+
   public Card handRemove(Card card) {
     if (hand.remove(card)) {
       return card;
