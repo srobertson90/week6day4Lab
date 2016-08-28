@@ -4,16 +4,16 @@ import cards.*;
 
 public class CardTest {
 
-   Card card; 
+  Card card; 
 
-   @Before 
-   public void before(){
+  @Before 
+  public void before(){
     card = new Card(SuitType.HEARTS, ValueType.TWO);
-   }
+  }
 
+  @Test
+  public void canGetSuit(){
+    assertEquals(SuitType.HEARTS, card.getSuit());
+  }
 
- @Test
- public void canGetSuit(){
-  assertEquals(SuitType.HEARTS, card.getSuit());
- }
 }
